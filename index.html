@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Catalan — Websites, SEO &amp; Consulting</title>
+<meta name="description" content="El Catalan builds websites, handles SEO, and consults on operations and partnerships for local businesses, mission-driven startups, and bigger brands. Based in San Francisco.">
+<meta property="og:title" content="El Catalan — Websites, SEO & Consulting">
+<meta property="og:description" content="Websites, SEO, and consulting for local businesses, mission-driven startups, and bigger brands. Based in San Francisco.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000; --text:#ffffff; --muted:#9ea5af; --card:#15181c;
+    --line:rgba(185,202,211,.16); --line2:#414141; --nav:rgba(0,0,0,.85);
+    --accent:#b9cad3; --btn:#b9cad3; --btntext:#15181c; --hover:#ffffff;
+    --serif:'Newsreader',Georgia,serif;
+    --sans:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:6px}
+  ::selection{background:#b9cad3;color:#15181c}
+
+  .wrap{max-width:960px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{padding-top:16px;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:20px}
+  .nav-links{display:flex;align-items:center;gap:clamp(14px,3vw,28px);font-size:15px;flex-wrap:wrap}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--hover)}
+  .nav-links a.pill{padding:8px 16px;border-radius:999px;background:var(--btn);color:var(--btntext);font-weight:500}
+  .nav-links a.pill:hover{background:#fff;color:var(--btntext)}
+
+  /* Buttons */
+  .btns{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;padding:13px 24px;border-radius:999px;font-size:16px;font-weight:500;border:1px solid var(--line2);transition:border-color .15s,background .15s}
+  .btn:hover{border-color:var(--hover)}
+  .btn.primary{background:var(--btn);color:var(--btntext);border-color:var(--btn)}
+  .btn.primary:hover{background:#fff;border-color:#fff}
+
+  /* Type */
+  .eyebrow{font-size:15px;font-weight:500;color:var(--accent)}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,6vw,60px);line-height:1.08;letter-spacing:-.015em;margin-top:16px;max-width:18ch}
+  .lede{font-size:clamp(17px,1.6vw,19px);line-height:1.6;color:var(--muted);max-width:54ch;margin-top:22px}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,42px);letter-spacing:-.01em}
+  .sub{font-size:17px;line-height:1.6;color:var(--muted);margin-top:10px;max-width:60ch}
+
+  /* Sections */
+  header.hero{padding:clamp(56px,10vw,112px) 0 clamp(48px,7vw,80px)}
+  section{padding:clamp(48px,7vw,80px) 0;border-top:1px solid var(--line);scroll-margin-top:72px}
+
+  /* Services */
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px;margin-top:32px}
+  .service{padding:22px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+  .service h3{font-size:17px;font-weight:600}
+  .service p{font-size:15.5px;line-height:1.55;color:var(--muted);margin-top:8px}
+  .text-link{display:inline-block;margin-top:28px;font-size:16px;font-weight:500;color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:2px}
+  .text-link:hover{color:var(--hover)}
+
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:18px;margin-top:32px}
+  .card{display:flex;flex-direction:column;padding:clamp(22px,3vw,28px);border-radius:16px;background:var(--card);border:1px solid var(--line)}
+  .tag{font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:26px;margin-top:8px}
+  .about{font-size:16px;line-height:1.55;color:var(--muted);margin-top:8px}
+  .card .about.grow{flex-grow:1}
+  .did{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px;flex-grow:1}
+  .did li{display:flex;gap:10px;font-size:15.5px;line-height:1.5}
+  .did li::before{content:"✓";color:var(--accent)}
+  .card-link{align-self:flex-start;margin-top:22px;font-size:15px;font-weight:500;padding:9px 16px;border-radius:999px;border:1px solid var(--line2)}
+  .card-link:hover{border-color:var(--hover)}
+
+  /* Contact */
+  footer{background:#15181c;color:#f3f4f6;border-top:1px solid var(--line);scroll-margin-top:72px}
+  .contact{padding-top:clamp(56px,9vw,96px);padding-bottom:32px}
+  .contact .eyebrow{margin-bottom:14px}
+  .contact h2{font-size:clamp(32px,5vw,52px);line-height:1.1;letter-spacing:-.015em}
+  .contact .sub{font-size:18px;color:#9ea5af;margin-top:14px;max-width:48ch}
+  .contact .btn{font-size:17px;border-color:#5a6068;color:#f3f4f6}
+  .contact .btn:hover{border-color:#b9cad3}
+  .contact .btn.primary{background:#b9cad3;color:#15181c;border-color:#b9cad3;font-weight:600}
+  .contact .btn.primary:hover{background:#fff;border-color:#fff}
+  .contact button.btn{font:inherit;font-size:15px;padding:13px 20px;background:transparent;cursor:pointer}
+  .socials{display:flex;gap:24px;flex-wrap:wrap;margin-top:32px;font-size:16px}
+  .socials a:hover{color:#fff;text-decoration:underline}
+  @media (max-width:600px){
+    nav{position:static}
+    .nav-inner{flex-direction:column;align-items:flex-start;gap:12px}
+    .nav-links{gap:16px;font-size:14.5px}
+    .nav-links a.pill{padding:6px 14px}
+  }
+  .legal{margin-top:64px;padding-top:20px;border-top:1px solid #414141;font-size:14px;color:#9ea5af;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">El Catalan</a>
+    <div class="nav-links">
+      <a href="#consulting">Consulting</a>
+      <a href="#work">Work</a>
+      <a href="#now">Current projects</a>
+      <a href="#contact" class="pill">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <header id="top" class="hero">
+    <p class="eyebrow">Websites · SEO · Consulting — San Francisco</p>
+    <h1>I build websites that help businesses get found and run smoother.</h1>
+    <p class="lede">Hi, I'm El. Your Jack of All Trades Web Generalist and Specialist. I build sites, handle the SEO, and consult on the operations and partnerships behind them. I support local businesses, mission-driven startups, and bigger brands alike. Check out what I've done and book a call with me!</p>
+    <div class="btns">
+      <a class="btn primary" href="https://calendar.app.google/Uv4coccQeTbzow8G9" target="_blank" rel="noopener">Book a call ↗</a>
+      <a class="btn" href="mailto:elcatalan.dev@gmail.com">Email me</a>
+      <a class="btn" href="#work">See my work</a>
+    </div>
+  </header>
+
+  <section id="consulting">
+    <h2>Consulting for businesses</h2>
+    <p class="sub">I work with small businesses and early-stage teams on the practical stuff that helps them grow from getting found online to getting the operations going behind the scenes.</p>
+    <div class="services">
+      <div class="service">
+        <h3>Websites &amp; ecommerce</h3>
+        <p>New sites, redesigns, and online stores on WordPress, Shopify, Squarespace, or Carrd.</p>
+      </div>
+      <div class="service">
+        <h3>SEO</h3>
+        <p>Technical cleanup and local SEO so the right customers can find you.</p>
+      </div>
+      <div class="service">
+        <h3>Systems &amp; operations</h3>
+        <p>Tools, integrations, and workflows that save your team time.</p>
+      </div>
+      <div class="service">
+        <h3>Partnerships &amp; research</h3>
+        <p>Finding the right partners and doing the groundwork to bring an idea to life.</p>
+      </div>
+    </div>
+    <a class="text-link" href="https://calendar.app.google/Uv4coccQeTbzow8G9" target="_blank" rel="noopener">Book a call to talk about your business ↗</a>
+  </section>
+
+  <section id="work">
+    <h2>Client work</h2>
+    <p class="sub">Businesses I've built for and worked with.</p>
+    <div class="cards">
+
+      <article class="card">
+        <p class="tag">Web build · SEO</p>
+        <h3>Contingenci</h3>
+        <p class="about">Sustainable veterinary gear made from upcycled outdoor deadstock.</p>
+        <ul class="did">
+          <li>Built marketing pages and an ROI calculator</li>
+          <li>Drove the organic traffic behind them</li>
+        </ul>
+        <a class="card-link" href="https://www.contingenci.com/" target="_blank" rel="noopener">Visit contingenci.com ↗</a>
+      </article>
+
+      <article class="card">
+        <p class="tag">Ecommerce · SEO · Current</p>
+        <h3>Seelie Studio</h3>
+        <p class="about">Natural dye made from overpopulated purple sea urchins on the California coast — supporting kelp restoration.</p>
+        <ul class="did">
+          <li>SEO for the site and online shop</li>
+          <li>Ecommerce operations for apparel and dye-kit sales</li>
+        </ul>
+        <a class="card-link" href="https://www.seeliestudio.com/" target="_blank" rel="noopener">Visit seeliestudio.com ↗</a>
+      </article>
+
+      <article class="card">
+        <p class="tag">Shopify · SEO</p>
+        <h3>Project Kin</h3>
+        <p class="about">Copenhagen label making durable travel bags from hemp with plant-based leather trim.</p>
+        <ul class="did">
+          <li>Supported their early Shopify integration</li>
+          <li>Updated SEO across the store</li>
+          <li>Refreshed product detail pages (PDPs)</li>
+        </ul>
+        <a class="card-link" href="https://projectkin.dk/" target="_blank" rel="noopener">Visit projectkin.dk ↗</a>
+      </article>
+
+      <article class="card">
+        <p class="tag">Web updates · SEO</p>
+        <h3>Mezzo Bespoke</h3>
+        <p class="about">Bespoke and made-to-measure menswear tailoring.</p>
+        <ul class="did">
+          <li>Updated site pages</li>
+          <li>Improved SEO</li>
+          <li>Installed and set up apps</li>
+        </ul>
+        <a class="card-link" href="https://mezzobespoke.com/" target="_blank" rel="noopener">Visit mezzobespoke.com ↗</a>
+      </article>
+
+      <article class="card">
+        <p class="tag">WordPress · Local SEO</p>
+        <h3>Dirt Cheap Sewer</h3>
+        <p class="about">Seattle-area plumbing and sewer contractor.</p>
+        <ul class="did">
+          <li>Technical SEO cleanup and plugin consolidation</li>
+          <li>Local SEO across 40+ city pages — Bellevue reached Google’s front page</li>
+          <li>Housecall Pro integration for bookings</li>
+        </ul>
+        <a class="card-link" href="https://dirtcheapsewer.com/" target="_blank" rel="noopener">Visit dirtcheapsewer.com ↗</a>
+      </article>
+
+      <article class="card">
+        <p class="tag">Author website</p>
+        <h3>Joseph G. Sisson</h3>
+        <p class="about">Seattle memoirist and author.</p>
+        <ul class="did">
+          <li>Designed and built the site on WordPress</li>
+          <li>Brought his book, press, and readings into one place</li>
+        </ul>
+        <a class="card-link" href="https://josephgsisson.com/" target="_blank" rel="noopener">Visit josephgsisson.com ↗</a>
+      </article>
+
+      <article class="card">
+        <p class="tag">Ecommerce systems</p>
+        <h3>Stanley 1913</h3>
+        <p class="about">Global drinkware and outdoor-gear brand.</p>
+        <ul class="did">
+          <li>In-house eCommerce operations and systems role</li>
+          <li>Supported the Shopify storefront and its day-to-day operations</li>
+        </ul>
+        <a class="card-link" href="https://www.stanley1913.com/" target="_blank" rel="noopener">Visit stanley1913.com ↗</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="now">
+    <h2>What I'm working on now</h2>
+    <p class="sub">Teams and communities I'm part of right now.</p>
+    <div class="cards">
+      <article class="card">
+        <p class="tag">Consultant · Indie game</p>
+        <h3>MyCove</h3>
+        <p class="about grow">A mobile game in development where players build living ocean ecosystems with real marine species, starting with the Salish Sea. I consult across the partnerships, research, and development teams.</p>
+        <a class="card-link" href="https://www.linkedin.com/company/my-cove/" target="_blank" rel="noopener">Follow on LinkedIn ↗</a>
+      </article>
+      <article class="card">
+        <p class="tag">Event planner · Community</p>
+        <h3>Filipino Surf Club</h3>
+        <p class="about grow">A surf club holding monthly meetups for Filipino surfers in the Bay Area. I plan events such as surf meet ups, potlucks, and other events to bring community together.</p>
+        <a class="card-link" href="https://www.instagram.com/avatar_ele/" target="_blank" rel="noopener">See on Instagram ↗</a>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap contact">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Have a project in mind?</h2>
+    <p class="sub">Book a call to talk it through, or send me a note about your business and what you need.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://calendar.app.google/Uv4coccQeTbzow8G9" target="_blank" rel="noopener">Book a call ↗</a>
+      <a class="btn" href="mailto:elcatalan.dev@gmail.com">elcatalan.dev@gmail.com</a>
+      <button type="button" class="btn" id="copy-email" data-email="elcatalan.dev@gmail.com">Copy email</button>
+    </div>
+    <!-- LinkedIn: add your profile URL below and remove the comment markers to show it.
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/YOUR-PROFILE/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    -->
+    <div class="legal">
+      <span>© <span id="year">2026</span> Eleazar Catalan</span>
+      <span>San Francisco, CA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var btn = document.getElementById('copy-email');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var email = btn.getAttribute('data-email');
+      var done = function () {
+        btn.textContent = 'Copied ✓';
+        setTimeout(function () { btn.textContent = 'Copy email'; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done, function () { window.location.href = 'mailto:' + email; });
+      } else {
+        window.location.href = 'mailto:' + email;
+      }
+    });
+  })();
+</script>
+</body>
+</html>
